@@ -1,0 +1,9 @@
+{
+  "name": "Matriz de puntos",
+  "description": "Dígitos de puntos LED con halo de luz, como los paneles de las estaciones.",
+  "author": "Ángel Velasco Arjona",
+  "version": "1.0.0",
+  "license": "MIT",
+  "size": { "width": 426, "height": 114 },
+  "tick": "second"
+}

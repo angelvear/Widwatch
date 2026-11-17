@@ -21,6 +21,7 @@ Reloj de escritorio para Windows, ligero, de código abierto y con **temas cread
 | **Analógico clásico** | SVG con segundero de barrido suave a 60 fps. |
 | **Flip clock** | Tarjetas que se voltean con animación 3D. |
 | **En palabras** | «Son las tres y cuarto de la tarde». |
+| **Matriz de puntos** | Dígitos de puntos LED 5×7 con halo de luz, como un panel de estación. |
 | **Ana-Digi retro** | Reloj de pulsera ochentero: agujas, segundero de cuarzo con rebote y LCD de 7 segmentos que se ilumina al pasar el ratón. |
 
 ## Instalar
