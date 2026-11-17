@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>TicTac · Galería de temas</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 32px;
+      box-sizing: border-box;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      color: #fff;
+      /* Imita un fondo de escritorio para juzgar la transparencia */
+      background: radial-gradient(circle at 20% 20%, #3a6ea5, transparent 55%),
+                  radial-gradient(circle at 80% 70%, #b0507a, transparent 55%),
+                  #1b2a4a;
+    }
+    h1 { margin: 0 0 4px; font-weight: 600; }
+    p.hint { margin: 0 0 24px; opacity: 0.75; }
+    .grid { display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; }
+    figure { margin: 0; }
+    figcaption { margin-top: 8px; font-size: 14px; opacity: 0.85; }
+    iframe { border: 1px dashed rgba(255, 255, 255, 0.25); display: block; background: transparent; }
+    label { margin-right: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Galería de temas</h1>
+  <p class="hint">Vista previa de todos los temas. La línea discontinua marca el borde de la ventana.</p>
+  <p>
+    <label><input type="checkbox" id="h24" checked /> 24 h</label>
+    <label><input type="checkbox" id="sec" checked /> Segundos</label>
+  </p>
+  <div class="grid" id="grid"></div>
+
+  <script type="module">
+    const grid = document.getElementById('grid');
+    const ids = await fetch('themes/themes.json').then((r) => r.json());
+    const manifests = await Promise.all(
+      ids.map((id) => fetch(`themes/${id}/manifest.json`).then((r) => r.json()).then((m) => ({ ...m, id }))),
+    );
+
+    function render() {
+      const q = `hour24=${h24.checked ? 1 : 0}&seconds=${sec.checked ? 1 : 0}`;
+      grid.replaceChildren(
+        ...manifests.map((m) => {
+          const fig = document.createElement('figure');
+          fig.innerHTML = `
+            <iframe src="index.html?theme=${m.id}&${q}" width="${m.size.width}" height="${m.size.height}"
+                    allowtransparency="true"></iframe>
+            <figcaption><b>${m.name}</b> · ${m.author}</figcaption>`;
+          return fig;
+        }),
+      );
+    }
+    h24.onchange = sec.onchange = render;
+    render();
+  </script>
+</body>
+</html>

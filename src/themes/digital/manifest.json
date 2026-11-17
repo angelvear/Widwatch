@@ -1,0 +1,9 @@
+{
+  "name": "Digital minimal",
+  "description": "Hora grande, fecha debajo y dos puntos que laten cada segundo.",
+  "author": "Ángel Velasco Arjona",
+  "version": "1.0.0",
+  "license": "MIT",
+  "size": { "width": 340, "height": 140 },
+  "tick": "second"
+}

@@ -1,0 +1,78 @@
+.theme-anadigi {
+  width: 100%;
+  height: 100%;
+}
+
+.theme-anadigi .watch {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* Esfera sin caja: un filo fino da sensación de cristal */
+.theme-anadigi .dial { stroke: rgba(60, 50, 30, 0.35); stroke-width: 1; }
+.theme-anadigi .dial-edge { fill: none; stroke: rgba(255, 255, 255, 0.45); stroke-width: 1; }
+
+/* Esfera */
+.theme-anadigi .index { stroke: #3b3528; stroke-width: 1.6; stroke-linecap: round; }
+.theme-anadigi .index.major { stroke-width: 3; }
+
+.theme-anadigi .brand {
+  fill: #2c271d;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-anchor: middle;
+}
+.theme-anadigi .sub {
+  fill: #6f6550;
+  font-size: 6.5px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-anchor: middle;
+}
+
+/* Agujas */
+.theme-anadigi .hand {
+  transform-box: view-box;
+  transform-origin: 115px 118px;
+}
+.theme-anadigi .hand-body { fill: #2d2e33; }
+.theme-anadigi .hand-lume { fill: #e9edf2; }
+.theme-anadigi .sec { stroke: #c0392b; stroke-width: 1.2; stroke-linecap: round; }
+.theme-anadigi .pin { fill: #2d2e33; }
+.theme-anadigi .pin-dot { fill: #c0392b; }
+
+/* Salto de cuarzo con un pequeño rebote */
+.theme-anadigi .second {
+  transition: transform 0.18s cubic-bezier(0.3, 2.4, 0.55, 1);
+}
+.theme-anadigi .second.instant { transition: none; }
+
+/* Pantalla LCD */
+.theme-anadigi .lcd-frame { fill: #8f8a7a; stroke: #5d5a50; stroke-width: 0.8; }
+.theme-anadigi .lcd-bg {
+  fill: #bfc4a8;
+  transition: fill 0.25s ease;
+}
+.theme-anadigi .lcd-glow { fill: #6fe6d2; opacity: 0; transition: opacity 0.25s ease; }
+
+.theme-anadigi .seg { fill: #2b2f22; opacity: 0.08; }
+.theme-anadigi .seg.on { opacity: 0.88; }
+.theme-anadigi .lcd-colon.off .seg { opacity: 0.08; }
+
+.theme-anadigi .lcd-day,
+.theme-anadigi .lcd-pm {
+  fill: #2b2f22;
+  opacity: 0.88;
+  font-family: Consolas, "Courier New", monospace;
+  font-weight: 700;
+}
+.theme-anadigi .lcd-day { font-size: 9px; }
+.theme-anadigi .lcd-pm { font-size: 6px; }
+
+/* Luz al pasar el ratón por encima del reloj */
+.theme-anadigi:hover .lcd-bg { fill: #8fe9d6; }
+.theme-anadigi:hover .lcd-glow { opacity: 0.9; }

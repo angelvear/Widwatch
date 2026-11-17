@@ -1,0 +1,10 @@
+/* Prefija siempre tus reglas con .theme-<id> para no afectar a otros temas. */
+.theme-_plantilla {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font: 600 48px "Segoe UI", system-ui, sans-serif;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}

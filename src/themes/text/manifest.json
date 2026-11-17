@@ -1,0 +1,9 @@
+{
+  "name": "En palabras",
+  "description": "La hora como la diría una persona: «son las tres y cuarto».",
+  "author": "Ángel Velasco Arjona",
+  "version": "1.0.0",
+  "license": "MIT",
+  "size": { "width": 380, "height": 150 },
+  "tick": "second"
+}

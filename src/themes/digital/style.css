@@ -1,0 +1,58 @@
+.theme-digital {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  color: #f2f4fb;
+}
+
+.theme-digital .panel {
+  box-sizing: border-box;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  border-radius: 22px;
+  background: linear-gradient(160deg, rgba(30, 33, 52, 0.82), rgba(14, 16, 28, 0.82));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.theme-digital .time {
+  display: flex;
+  align-items: baseline;
+  font-size: 64px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 18px rgba(120, 160, 255, 0.35);
+}
+
+.theme-digital .colon {
+  margin: 0 2px;
+  transform: translateY(-4px);
+  transition: opacity 0.25s ease;
+}
+.theme-digital .colon.dim { opacity: 0.25; }
+
+.theme-digital .ss,
+.theme-digital .ampm {
+  font-size: 22px;
+  font-weight: 400;
+  margin-left: 8px;
+  color: #8fa6ff;
+}
+.theme-digital .ss:empty,
+.theme-digital .ampm:empty { display: none; }
+
+.theme-digital .date {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(242, 244, 251, 0.6);
+}

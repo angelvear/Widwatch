@@ -1,0 +1,122 @@
+.theme-flip {
+  --card-w: 56px;
+  --card-h: 82px;
+  --card-bg: #23252e;
+  --card-bg-dark: #1b1d24;
+  --ink: #f4f1ea;
+  --flip-ms: 600ms;
+
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-family: "Bahnschrift", "DIN Alternate", "Segoe UI", system-ui, sans-serif;
+}
+
+.theme-flip .flip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(10, 11, 15, 0.7);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+}
+
+.theme-flip .group { display: flex; gap: 6px; }
+
+.theme-flip .no-seconds .seconds,
+.theme-flip .no-seconds .sep-sec { display: none; }
+
+.theme-flip .sep {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.theme-flip .sep i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(244, 241, 234, 0.55);
+}
+
+/* --- Tarjeta --------------------------------------------------------- */
+
+.theme-flip .card {
+  position: relative;
+  width: var(--card-w);
+  height: var(--card-h);
+  perspective: 300px;
+  font-size: 64px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.theme-flip .half,
+.theme-flip .flap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.theme-flip .half span,
+.theme-flip .flap span {
+  display: block;
+  height: var(--card-h);
+  line-height: var(--card-h);
+  text-align: center;
+}
+
+.theme-flip .upper,
+.theme-flip .front {
+  top: 0;
+  border-radius: 8px 8px 0 0;
+  background: var(--card-bg);
+  transform-origin: 50% 100%;
+}
+
+.theme-flip .lower,
+.theme-flip .back {
+  bottom: 0;
+  border-radius: 0 0 8px 8px;
+  background: var(--card-bg-dark);
+  transform-origin: 50% 0;
+}
+.theme-flip .lower span,
+.theme-flip .back span { transform: translateY(-50%); }
+
+/* Línea de la bisagra */
+.theme-flip .card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% - 1px);
+  height: 2px;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 5;
+}
+
+/* Las solapas solo se ven mientras se anima */
+.theme-flip .flap { visibility: hidden; z-index: 2; }
+.theme-flip .flipping .flap { visibility: visible; }
+
+.theme-flip .flipping .front {
+  animation: flip-front calc(var(--flip-ms) / 2) ease-in forwards;
+}
+.theme-flip .flipping .back {
+  transform: rotateX(90deg);
+  animation: flip-back calc(var(--flip-ms) / 2) ease-out calc(var(--flip-ms) / 2) forwards;
+}
+
+@keyframes flip-front {
+  from { transform: rotateX(0deg); filter: brightness(1); }
+  to   { transform: rotateX(-90deg); filter: brightness(0.6); }
+}
+@keyframes flip-back {
+  from { transform: rotateX(90deg); filter: brightness(1.4); }
+  to   { transform: rotateX(0deg); filter: brightness(1); }
+}

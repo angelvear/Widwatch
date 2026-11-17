@@ -1,0 +1,29 @@
+[package]
+name = "tictac"
+version = "0.1.0"
+description = "Reloj de escritorio para Windows, de código abierto y con temas creados por la comunidad"
+authors = ["Ángel Velasco Arjona"]
+license = "MIT"
+edition = "2021"
+
+[lib]
+name = "tictac_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-autostart = "2"
+tauri-plugin-single-instance = "2"
+tauri-plugin-window-state = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

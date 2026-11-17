@@ -1,0 +1,9 @@
+{
+  "name": "Analógico clásico",
+  "description": "Esfera con segundero de barrido suave a 60 fps.",
+  "author": "Ángel Velasco Arjona",
+  "version": "1.0.0",
+  "license": "MIT",
+  "size": { "width": 230, "height": 230 },
+  "tick": "frame"
+}

@@ -1,0 +1,33 @@
+# Comprueba que el núcleo en Rust compila en cada pull request.
+name: Check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  rust:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri -> target
+      - run: cargo check --manifest-path src-tauri/Cargo.toml
+
+  themes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cada tema de themes.json tiene manifest.json, clock.js y style.css
+        run: |
+          for id in $(jq -r '.[]' src/themes/themes.json); do
+            for f in manifest.json clock.js style.css; do
+              test -f "src/themes/$id/$f" || { echo "Falta src/themes/$id/$f"; exit 1; }
+            done
+            jq -e '.name and .author and .size.width and .size.height' "src/themes/$id/manifest.json" > /dev/null \
+              || { echo "manifest.json incompleto en $id"; exit 1; }
+          done
+          echo "Temas OK"

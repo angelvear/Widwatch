@@ -1,0 +1,9 @@
+{
+  "name": "Ana-Digi retro",
+  "description": "Reloj de pulsera de los 80: agujas, segundero de cuarzo y pantalla LCD que se ilumina al pasar el ratón.",
+  "author": "Ángel Velasco Arjona",
+  "version": "1.0.0",
+  "license": "MIT",
+  "size": { "width": 200, "height": 250 },
+  "tick": "second"
+}

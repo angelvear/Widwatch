@@ -1,0 +1,42 @@
+.theme-analog {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.theme-analog .face {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.4));
+  font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+}
+
+.theme-analog .rim { fill: #1d2033; }
+.theme-analog .dial { fill: #f5f1e8; }
+
+.theme-analog .tick { stroke: #9a958a; stroke-width: 1.2; stroke-linecap: round; }
+.theme-analog .tick.major { stroke: #1d2033; stroke-width: 3; }
+
+.theme-analog .num {
+  fill: #1d2033;
+  font-size: 15px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+.theme-analog .date {
+  fill: #8a8577;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-anchor: middle;
+}
+
+.theme-analog .hand { stroke-linecap: round; }
+.theme-analog .hour { stroke: #1d2033; stroke-width: 6; }
+.theme-analog .minute { stroke: #1d2033; stroke-width: 4; }
+.theme-analog .sec { stroke: #ff6b4a; stroke-width: 1.6; }
+.theme-analog .hub { fill: #ff6b4a; }
+.theme-analog .hub-dot { fill: #f5f1e8; }

@@ -1,0 +1,17 @@
+{
+  "name": "tictac",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Reloj de escritorio para Windows, de código abierto y con temas de la comunidad",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "preview": "serve src -l 5173",
+    "tauri": "tauri"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "serve": "^14"
+  }
+}
