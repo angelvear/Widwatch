@@ -1,5 +1,5 @@
 [package]
-name = "tictac"
+name = "widwatch"
 version = "0.1.0"
 description = "Reloj de escritorio para Windows, de código abierto y con temas creados por la comunidad"
 authors = ["Ángel Velasco Arjona"]
@@ -7,7 +7,7 @@ license = "MIT"
 edition = "2021"
 
 [lib]
-name = "tictac_lib"
+name = "widwatch_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]

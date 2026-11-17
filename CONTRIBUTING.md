@@ -1,4 +1,4 @@
-# Cómo contribuir a TicTac
+# Cómo contribuir a WidWatch
 
 Gracias por echar una mano. Hay dos formas principales de contribuir:
 

@@ -1,4 +1,4 @@
-# TicTac ⏰
+# WidWatch ⏰
 
 Reloj de escritorio para Windows, ligero, de código abierto y con **temas creados por la comunidad**.
 

@@ -1,4 +1,4 @@
-//! Núcleo de TicTac: ventana del reloj, bandeja del sistema y ajustes.
+//! Núcleo de WidWatch: ventana del reloj, bandeja del sistema y ajustes.
 //!
 //! El dibujo del reloj vive entero en `src/` (HTML/CSS/JS). Este lado solo se
 //! ocupa de lo que una página web no puede hacer: la ventana, el menú, el
@@ -284,7 +284,7 @@ pub fn run() {
                         .cloned()
                         .expect("falta el icono de la app"),
                 )
-                .tooltip("TicTac")
+                .tooltip("WidWatch")
                 .menu(&menu)
                 .show_menu_on_left_click(true)
                 .build(app)?;
@@ -293,5 +293,5 @@ pub fn run() {
             Ok(())
         })
         .run(tauri::generate_context!())
-        .expect("error al arrancar TicTac");
+        .expect("error al arrancar WidWatch");
 }

@@ -1,4 +1,4 @@
-//! Ajustes del usuario, guardados en `%APPDATA%/io.github.tictac.clock/settings.json`.
+//! Ajustes del usuario, guardados en `%APPDATA%/io.github.angelvear.widwatch/settings.json`.
 
 use std::fs;
 use std::path::PathBuf;

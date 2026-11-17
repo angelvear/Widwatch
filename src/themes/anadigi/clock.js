@@ -1,5 +1,5 @@
 // Tema "Ana-Digi retro": esfera analógica + pantalla LCD de 7 segmentos.
-// Diseño original de TicTac inspirado en los relojes analógico-digitales de los 80.
+// Diseño original de WidWatch inspirado en los relojes analógico-digitales de los 80.
 
 const NS = 'http://www.w3.org/2000/svg';
 const CX = 115; // centro de las agujas
@@ -86,7 +86,7 @@ export default {
     }
 
     const brand = el('text', { x: CX, y: 74, class: 'brand' }, s);
-    brand.textContent = 'TICTAC';
+    brand.textContent = 'WIDWATCH';
     const sub = el('text', { x: CX, y: 85, class: 'sub' }, s);
     sub.textContent = 'ANA · DIGI';
 

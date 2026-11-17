@@ -1,4 +1,4 @@
-// Anfitrión de temas de TicTac.
+// Anfitrión de temas de WidWatch.
 //
 // Carga el tema elegido, le pasa la hora en cada "tick" y reacciona a los
 // cambios de ajustes que llegan desde el menú. Funciona igual dentro de Tauri
@@ -33,7 +33,7 @@ async function loadManifests() {
         const m = await fetch(`themes/${id}/manifest.json`).then((r) => r.json());
         return { ...m, id };
       } catch (err) {
-        console.warn(`[TicTac] El tema "${id}" no tiene manifest.json válido`, err);
+        console.warn(`[WidWatch] El tema "${id}" no tiene manifest.json válido`, err);
         return null;
       }
     }),
@@ -85,7 +85,7 @@ function applySize(manifest) {
   stage.style.width = `${width}px`;
   stage.style.height = `${height}px`;
   stage.style.transform = `scale(${scale})`;
-  stage.style.setProperty('--tictac-scale', scale);
+  stage.style.setProperty('--widwatch-scale', scale);
   return invoke('resize_window', { width: width * scale, height: height * scale });
 }
 
@@ -161,6 +161,6 @@ async function boot() {
 }
 
 boot().catch((err) => {
-  console.error('[TicTac]', err);
+  console.error('[WidWatch]', err);
   invoke('clock_ready');
 });

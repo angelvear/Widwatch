@@ -19,12 +19,12 @@ body {
 
 /* Al cambiar de tema, el nuevo aparece con un fundido suave. */
 #stage.entering {
-  animation: tictac-enter 0.35s ease-out;
+  animation: widwatch-enter 0.35s ease-out;
 }
 
-@keyframes tictac-enter {
-  from { opacity: 0; transform: scale(var(--tictac-scale, 1)) translateY(4px); }
-  to   { opacity: 1; transform: scale(var(--tictac-scale, 1)); }
+@keyframes widwatch-enter {
+  from { opacity: 0; transform: scale(var(--widwatch-scale, 1)) translateY(4px); }
+  to   { opacity: 1; transform: scale(var(--widwatch-scale, 1)); }
 }
 
 @media (prefers-reduced-motion: reduce) {

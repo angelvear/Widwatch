@@ -1,4 +1,4 @@
-// Plantilla de tema para TicTac.
+// Plantilla de tema para WidWatch.
 // 1. Copia esta carpeta y renómbrala (solo minúsculas, números y guiones: "mi-tema").
 // 2. Añade el nombre de la carpeta a src/themes/themes.json.
 // 3. Ábrela en la galería (npm run preview → /gallery.html) y ¡a diseñar!
