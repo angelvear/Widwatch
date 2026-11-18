@@ -1,10 +1,17 @@
-# Genera el instalador de Windows (.exe y .msi) al publicar una etiqueta vX.Y.Z
-# y lo adjunta como borrador de release en GitHub.
+# Genera el instalador de Windows (.exe y .msi) y lo adjunta como borrador de
+# release en GitHub. La etiqueta vX.Y.Z se crea sola a partir de la versión de
+# src-tauri/tauri.conf.json.
+#
+# Se lanza de tres formas:
+#   - publicando una etiqueta v*
+#   - subiendo cambios a la rama `release`
+#   - a mano desde la pestaña Actions → Release → Run workflow
 name: Release
 
 on:
   push:
     tags: ["v*"]
+    branches: [release]
   workflow_dispatch:
 
 permissions:
@@ -32,7 +39,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tagName: ${{ github.ref_name }}
-          releaseName: "WidWatch ${{ github.ref_name }}"
+          tagName: v__VERSION__
+          releaseName: "WidWatch v__VERSION__"
           releaseBody: "Descarga el instalador `.exe` o `.msi` de abajo."
           releaseDraft: true
